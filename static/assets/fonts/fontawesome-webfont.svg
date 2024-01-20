@@ -2667,5 +2667,8 @@ q14 3 26.5 -5t15.5 -23zM1691 1033q15 -22 10.5 -49t-26.5 -43q-22 -15 -49 -10t-42 
  />
     <glyph glyph-name="lessequal" unicode="&#xf500;" horiz-adv-x="1792" 
  />
+    <glyph glyph-name="google_scholar" unicode="&#xf501;" horiz-adv-x="1792" 
+d="M121.037 298.667c23.968-50.453 75.392-85.334 134.963-85.334s110.995 34.881 134.963 85.334H121.037z" />
+    
   </font>
 </defs></svg>

@@ -1,15 +1,15 @@
 # links section data
-- last_name: <a href="https://github.com/igarag/2019-tfm-ignacio-arranz" target="_blank">Master Thesis</a>
+- last_name: <a href="https://github.com/kinux98" target="_blank">Github</a>
   first_name: Repository
-  website: https://github.com/igarag/2019-tfm-ignacio-arranz
+  website: https://github.com/kinux98
   i18n: tfm
 
-- last_name: <a href="2019-tfm-ignacio-arranz.github.io" target="_blank">Master Thesis</a>
-  first_name: LogBook
-  website: 2019-tfm-ignacio-arranz.github.io
+- last_name: <a href="https://scholar.google.co.kr/citations?user=Xy8bpc8AAAAJ&hl=ko" target="_blank">Google Scholar</a>
+  first_name: 
+  website: https://scholar.google.co.kr/citations?user=Xy8bpc8AAAAJ&hl=ko
   i18n: cuaderno_bitacora
 
-- last_name: <a href="2019-tfm-ignacio-arranz.github.io" target="_blank">Personal</a>
-  first_name: Repository
-  website: https://github.com/igarag
+- last_name: <a href="https://cvlab.postech.ac.kr/lab/" target="_blank">Computer Vision Lab</a>
+  first_name:  at POSTECH
+  website: https://cvlab.postech.ac.kr/lab/
   i18n: mi_repo

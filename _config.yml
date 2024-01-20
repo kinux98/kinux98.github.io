@@ -1,24 +1,24 @@
 # Welcome to Jekyll!
 
 # Website settings
-title: NachoAz
-description: Nacho's online CV using Jekyll and GithubPages.
-keywords: NachoAz,Jekyll,github,gh-pages
+title: Donghyeon Kwon's Homepage
+description: Donghyeon Kwon's Homepage
+keywords: kinux98,DonghyeonKwon,CV,postech
 baseurl: '/online-cv' # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
-url: https://igarag.github.io/online-cv  # url should be 'http://<github_username>.github.io/homepage' as before
+url: http://kinux98.github.io/online-cv  # url should be 'http://<github_username>.github.io/homepage' as before
 # url: http://127.0.0.1:4000
 img_path: /static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
 
 # author -- index page "about me" section
 author: # change following line to your infomation.
-  name: Nacho  # Be used at blog posts' author.
-  first_name: Ignacio  # Be used at index page about me section.
-  last_name: Arranz  # Be used at index page about me section.
-  avatar: /static/assets/img/landing/perfil3.jpg  # upload your avatar at directory and edit it.
-  github_username: igarag  # Leave blank if you don't have now
-  linkedin_id: https://www.linkedin.com/in/ignacio-arranz-águeda-31416a150/ # Leave blank if you don't have now
-  twitter_username: i__arranz  # Leave blank if you don't have now
-  email: n.arranz.agueda@gmail.com  # Leave blank if you don't have now
+  name: kinux98  # Be used at blog posts' author.
+  first_name: Donghyeon  # Be used at index page about me section.
+  last_name: Kwon  # Be used at index page about me section.
+  avatar: /static/assets/img/landing/profile.jpg  # upload your avatar at directory and edit it.
+  google_scholar_id: Xy8bpc8AAAAJ&hl=ko
+  github_username: kinux98  # Leave blank if you don't have now
+  linkedin_id: donghyeon-kwon-7b0a09162/ # Leave blank if you don't have now
+  email: kinux98@postech.ac.kr  # Leave blank if you don't have now
   #cv: http://cv.jarrekk.com  # An online CV can be printed as PDF, leave blank if you don't have now
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz 
   skill_icon1:
@@ -27,8 +27,7 @@ author: # change following line to your infomation.
   skill_icon2:
     - name: icon-python
     - name: icon-ubuntu
-  desc: Telecom and computer vision engineer. Curious. I like to be informed about new technologies and developments. Heavy metal music lover.  # Describe yourself.
-
+  desc: 
 # comment
 disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
   #name: nachoaz 
