@@ -3,10 +3,10 @@
   <channel>
     <title>Donghyeon Kwon&apos;s Homepage</title>
     <description>Donghyeon Kwon&apos;s Homepage</description>
-    <link>http://localhost:4000/online-cv/</link>
-    <atom:link href="http://localhost:4000/online-cv/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Jan 2024 23:50:10 +0900</pubDate>
-    <lastBuildDate>Sat, 20 Jan 2024 23:50:10 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 21 Jan 2024 00:00:41 +0900</pubDate>
+    <lastBuildDate>Sun, 21 Jan 2024 00:00:41 +0900</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
@@ -40,8 +40,8 @@ say_hello()   // &quot;hello world!&quot;
 &lt;p&gt;Side note comment: applied a bug fix similar to &lt;a href=&quot;https://github.com/Atlas7/atlas7.github.io/commit/6659f4a47f6ec66987adb0f683a9c6f3842252ae#diff-818954a41dbfb01af70050a459c603b9&quot;&gt;this commit&lt;/a&gt; to ensure code snippet does not collapse unexpectly upon clicking on it. This issue is tracked &lt;a href=&quot;https://github.com/jarrekk/Jalpc/issues/97&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 08 Jul 2019 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/online-cv/html/2019/07/08/test-code-snippets.html</link>
-        <guid isPermaLink="true">http://localhost:4000/online-cv/html/2019/07/08/test-code-snippets.html</guid>
+        <link>http://localhost:4000/html/2019/07/08/test-code-snippets.html</link>
+        <guid isPermaLink="true">http://localhost:4000/html/2019/07/08/test-code-snippets.html</guid>
         
         <category>NachoAz</category>
         
@@ -99,8 +99,8 @@ say_hello()   // &quot;hello world!&quot;
 &lt;p&gt;If you like this repository, I appreciate you star this repository. Please don’t hesitate to mail me or post issues on GitHub if you have any questions. Hope you have a happy blog time!😊&lt;/p&gt;
 </description>
         <pubDate>Tue, 31 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/online-cv/html/2017/01/31/3-steps-to-setup-website-with-Jalpc.html</link>
-        <guid isPermaLink="true">http://localhost:4000/online-cv/html/2017/01/31/3-steps-to-setup-website-with-Jalpc.html</guid>
+        <link>http://localhost:4000/html/2017/01/31/3-steps-to-setup-website-with-Jalpc.html</link>
+        <guid isPermaLink="true">http://localhost:4000/html/2017/01/31/3-steps-to-setup-website-with-Jalpc.html</guid>
         
         <category>Jalpc</category>
         
