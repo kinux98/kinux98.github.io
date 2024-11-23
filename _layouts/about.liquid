@@ -40,39 +40,61 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-
-    <!-- Latest posts -->
-    {% if site.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
-
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
+    <br>
+    <br>
 
     <!-- Social -->
     {% if page.social %}
       <div class="social">
         <div class="contact-icons">{% include social.liquid %}</div>
-
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
     {% endif %}
 
+    <br>
+    <br>
+
+    <!-- News -->
+    {% if page.news and site.announcements.enabled %}
+      <h2><b>News</b></h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+    <br>
+    <br>
+
+    <!-- Experience -->
+    {%- include experiences.html %}
+
+    <br>
+    <br>
+
+    <!-- Education -->
+    {%- include educations.html %}
+
+    <br>
+    <br>
+
+    <!-- Selected papers -->
+    <h2> <b>Publications</b> </h2>
+    <div class="publications">
+    {% bibliography %}
+
+    <br>
+    <br>
+
+    <!-- Services -->
+    {%- include services.html %}
+
+    <br>
+    <br>
+
+    <!-- Honors -->
+    {%- include honors.html %}
+
+    <br>
+    <br>
+    
     {% if site.newsletter.enabled and site.footer_fixed %}
       {% include scripts/newsletter.liquid center=true %}
     {% endif %}

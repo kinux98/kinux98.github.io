@@ -1,25 +1,20 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: null #<a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
-
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+  image: profile.jpg
+  image_circular: true # crops the image to make it circular
+  
 social: true # includes social icons at the bottom of the page
+news: true # includes a list of news items
+publications: true # includes a list of papers marked as "selected={true}"
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am currently a 4th year Ph.D. candidate in the [Department of Computer Science and Engineering at POSTECH](https://ecse.postech.ac.kr/), where I work in the [Computer Vision Lab](https://cvlab.postech.ac.kr) under the supervision of Prof. [Suha Kwak](https://suhakwak.github.io/). My research focuses on advancing data-efficient methods in computer vision and deep learning. Specifically, I explore areas such as multi-modal knowledge distillation, semi- and self-supervised learning, and their practical applications. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My work aims to push the boundaries of what can be achieved with limited data, enabling more scalable and accessible solutions in computer vision. I am passionate about leveraging these techniques to bridge the gap between cutting-edge research and real-world impact. If you're interested in my research projects or potential collaborations, I'd be delighted to connect. Feel free to reach out—I'd love to hear from you!
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
