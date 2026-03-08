@@ -14,6 +14,8 @@ news: true # includes a list of news items
 publications: true # includes a list of papers marked as "selected={true}"
 ---
 
-I am a 5th-year Ph.D. candidate in the [Department of Computer Science and Engineering at POSTECH](https://ecse.postech.ac.kr/), working in the [Computer Vision Lab](https://cvlab.postech.ac.kr) under the supervision of [Prof. Suha Kwak](https://suhakwak.github.io/). My research focuses on advancing data-efficient methods in computer vision and deep learning, particularly in areas such as multi-modal knowledge distillation, semi- and self-supervised learning, and their practical applications.  
+I am a Researcher at [GenGenAI](https://gengen.ai/), where I work on research and development for Generative AI systems while fulfilling my military obligation.
 
-My work aims to push the boundaries of what is possible with limited data, enabling more scalable and accessible solutions in computer vision. I am passionate about bridging the gap between cutting-edge research and real-world impact through these techniques. If you're interested in my research projects or potential collaborations, I'd be happy to connect—feel free to reach out!
+Before joining GenGenAI, I was a Ph.D. candidate in the [Department of Computer Science and Engineering at POSTECH](https://ecse.postech.ac.kr/), where I conducted research in the [Computer Vision Lab](https://cvlab.postech.ac.kr) under the supervision of [Prof. Suha Kwak](https://suhakwak.github.io/). My research focused on data-efficient learning in computer vision and deep learning, with particular interests in multi-modal knowledge distillation, semi-supervised learning, self-supervised learning, and their practical applications.
+
+My broader goal is to develop learning methods that remain effective under limited supervision and data constraints, making AI systems more scalable and applicable to real-world problems. I am interested in bridging rigorous research and practical impact through robust and efficient machine learning systems.
