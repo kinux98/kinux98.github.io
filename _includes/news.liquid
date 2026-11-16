@@ -6,7 +6,7 @@
       <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%b %Y' }}</time>
       <div class="news-copy">
         {% if item.inline %}
-          {{ item.content | markdownify | replace: ':memo:', '' | replace: ':tada:', '' | replace: ':sparkles:', '' }}
+          {{ item.content | markdownify | replace: ':memo:', '' | replace: ':tada:', '' | replace: ':sparkles:', '' | replace: '📝', '' | replace: '🎉', '' | replace: '🏆', '' }}
         {% else %}
           <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
         {% endif %}

@@ -5,5 +5,5 @@ layout: default
   <a class="small-link" href="{{ '/news/' | relative_url }}">All news</a>
   <h1>{{ page.title | default: 'News' }}</h1>
   {% if page.date %}<p class="record-date"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time></p>{% endif %}
-  <div class="prose">{{ content | replace: ':memo:', '' | replace: ':tada:', '' | replace: ':sparkles:', '' }}</div>
+  <div class="prose">{{ content | replace: ':memo:', '' | replace: ':tada:', '' | replace: ':sparkles:', '' | replace: '📝', '' | replace: '🎉', '' | replace: '🏆', '' }}</div>
 </article>
