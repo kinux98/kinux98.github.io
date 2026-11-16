@@ -93,3 +93,13 @@ Berkeley (restrained accent colors and typography) and the example research
 presentation of Minimal Light. The goal is to emphasize research content rather
 than add decorative logos, background illustrations or external dependencies.
 
+## Author profile links and typography
+
+`_data/authors.yml` maps exact BibTeX author names to verified personal
+homepages or individual scholarly profiles (ORCID/DBLP). The bibliography
+template displays available links and leaves other authors as plain text;
+the site owner's name stays bold. This does not change citation metadata.
+
+Readability was improved by a small increase in body, navigation, publication,
+news and background text sizes, including mobile breakpoints.
+

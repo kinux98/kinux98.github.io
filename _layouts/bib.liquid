@@ -11,12 +11,16 @@
     <p class="paper-authors">
       {%- for author in entry.author_array -%}
         {%- unless forloop.first -%}, {% endunless -%}
-        {%- assign surname = author.last | remove: '*' -%}
-        {%- if author.first == site.first_name and surname == site.last_name -%}
-          <strong>{{ author.first }} {{ surname }}</strong>
+        {%- assign surname = author.last | remove: '*' | strip -%}
+        {%- assign author_name = author.first | append: ' ' | append: surname | strip -%}
+        {%- assign author_url = site.data.authors[author_name] -%}
+        {%- if author.first == site.first_name and surname == site.last_name -%}<strong>{%- endif -%}
+        {%- if author_url -%}
+          <a href="{{ author_url | escape }}" target="_blank" rel="noopener noreferrer">{{ author_name | escape }}</a>
         {%- else -%}
-          {{ author.first }} {{ surname }}
+          {{ author_name | escape }}
         {%- endif -%}
+        {%- if author.first == site.first_name and surname == site.last_name -%}</strong>{%- endif -%}
         {%- if author.last contains '*' -%}<sup>*</sup>{%- endif -%}
       {%- endfor -%}
     </p>

@@ -430,6 +430,51 @@ strong { font-weight: 600; }
   .site-nav a, .paper-links a { transition: none; }
 }
 
+
+/* Readable type scale and subtle links on verified author names. */
+body { font-size: 17px; }
+h2 { font-size: 1.44rem; }
+h3 { font-size: 1.06rem; }
+.site-name { font-size: 16px; }
+.site-nav a, #theme-toggle { font-size: 14px; }
+.affiliation { font-size: 16px; }
+.biography p:first-child { font-size: 17.5px; }
+.profile-links a { font-size: 14px; }
+.section-note, .small-link, .news-list time { font-size: 13px; }
+.news-copy { font-size: 15px; }
+.section-heading h2 { font-size: 1.54rem; }
+.two-column h2 { font-size: 1.42rem; }
+.intro-kicker { font-size: 11px; }
+.research-themes span { font-size: 12px; }
+.portrait figcaption { font-size: 12.5px; }
+.paper h3 { font-size: 18px; }
+.paper-authors { font-size: 14.5px; }
+.paper-authors a {
+  color: var(--accent-strong, var(--link));
+  text-decoration: underline;
+  text-decoration-color: var(--accent-border, var(--line));
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.paper-authors a:hover { color: var(--accent); text-decoration-color: currentColor; }
+.paper-authors strong a { font-weight: 700; }
+.paper-venue { font-size: 14px; }
+.paper-note { font-size: 13px; }
+.paper-links a, .paper-details { font-size: 13px; }
+.record-date, .site-footer { font-size: 13px; }
+.record-org, .record-detail, .subheading, .service-list > div { font-size: 14px; }
+.honors-list h3 { font-size: 15px; }
+@media (max-width: 540px) {
+  body { font-size: 16px; }
+  .site-nav a, #theme-toggle { font-size: 13px; }
+  .news-copy { font-size: 14px; }
+  .paper h3 { font-size: 17px; }
+  .section-heading h2 { font-size: 1.4rem; }
+  .research-themes span, .portrait figcaption { font-size: 11.5px; }
+  .intro-kicker { font-size: 10px; }
+  .portrait figcaption { white-space: normal; }
+}
+
 @media print {
   .site-header, .site-footer, .profile-links, .paper-details, .skip-link { display: none; }
   :root { --background: #fff; --text: #111; --muted: #444; --link: #111; --line: #ccc; }
