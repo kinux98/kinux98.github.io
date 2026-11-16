@@ -47,14 +47,13 @@ The lockfile supports Linux x86-64 and Apple Silicon. On other platforms run
 
 ## Link policy and author verification
 
-`_plugins/link_targets.rb` adds `target="_blank"` and `rel="noopener noreferrer"`
-to navigation links during the Jekyll build, including Markdown, news, internal
-pages, section menus and PDFs. It leaves escaped code and script/style content
-unchanged. New-tab behavior therefore works without JavaScript. The keyboard
-**Skip to content** control stays in the current page; theme buttons and native
-BibTeX disclosure are controls, not navigation links. Email links still use the
-visitor's configured mail handler. The browser decides whether `_blank` is shown
-as a tab or a separate window.
+`_plugins/link_targets.rb` applies link behavior during the Jekyll build:
+**internal HTML pages, section anchors, home links, and the keyboard skip link
+remain in the current tab** (`target="_self"`). **External research/author pages
+and PDF documents** open in a new tab/window (`target="_blank"` with
+`rel="noopener noreferrer"`). Markdown/news links are handled uniformly,
+without browser JavaScript. Theme and BibTeX disclosure remain in-page controls.
+Email links still use the visitor's mail handler.
 
 Author mappings use full display names, never surnames alone. The 14 current
 authors all have verified identity links: personal websites, academic profiles,

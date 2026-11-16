@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check new-tab targets and author coverage in the built site, offline."""
+"""Check same-site vs external link targets and author coverage in the built site."""
 from __future__ import annotations
 import re
 import sys
@@ -25,17 +25,25 @@ class Links(HTMLParser):
             self.in_authors = True
         if tag != 'a' or 'href' not in data:
             return
-        skip = 'skip-link' in classes and data['href'] == '#main-content'
-        if skip:
-            if data.get('target') not in (None, '_self'):
-                self.errors.append('Keyboard skip control must stay on the current page')
+        from urllib.parse import urlsplit
+        from pathlib import PurePosixPath
+        href = data['href'].strip()
+        parsed = urlsplit(href)
+        same_site = parsed.hostname in (None, 'kinux98.github.io') and parsed.scheme in ('', 'http', 'https')
+        path = (parsed.path or '').lower()
+        basename = PurePosixPath(path).name
+        is_html = not path or path.endswith(('/', '.html', '.htm')) or '.' not in basename
+        internal_navigation = same_site and is_html
+        self.count += 1
+        if internal_navigation:
+            if data.get('target') != '_self':
+                self.errors.append(f"Internal navigation opens new tab: {href}")
         else:
-            self.count += 1
             if data.get('target') != '_blank':
-                self.errors.append(f"Link missing new-tab target: {data['href']}")
+                self.errors.append(f"External/document link missing new-tab target: {href}")
             rel = set((data.get('rel') or '').lower().split())
             if not {'noopener', 'noreferrer'}.issubset(rel) or 'opener' in rel:
-                self.errors.append(f"Unsafe relation: {data['href']}")
+                self.errors.append(f"Unsafe relation: {href}")
         if self.in_authors:
             self.in_link = True
             self.author_text = []
@@ -82,8 +90,8 @@ def main():
                     errors.append(f'Removed header or keyword UI still present: {marker}')
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'PASS: {len(pages)} pages, {total} safe new-tab hyperlinks; {len(home.names)} unique linked authors across {home.author_count} homepage author occurrences.')
-    print('Keyboard skip control remains local. External URL availability is not checked offline.')
+    print(f'PASS: {len(pages)} pages, {total} navigation/document hyperlinks; {len(home.names)} unique linked authors across {home.author_count} homepage author occurrences.')
+    print('Same-site navigation and keyboard skip links stay in the current tab. External URL availability is not checked offline.')
 
 
 if __name__ == '__main__':
