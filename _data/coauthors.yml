@@ -1,0 +1,13 @@
+# Person-specific destinations, verified against personal/institutional pages.
+# Key on the full name to avoid accidental links between different researchers.
+# Names without a verified personal or author-specific profile render as plain text.
+"Donghyeon Kwon": "https://scholar.google.com/citations?user=Xy8bpc8AAAAJ"
+"Suha Kwak": "https://suhakwak.github.io/"
+"Boseung Jeong": "https://scholar.google.com/citations?user=CiQLGVMAAAAJ"
+"Youngseok Yoon": "https://scholar.google.com/citations?user=AFPIkj0AAAAJ"
+"Hyunsouk Cho": "https://sites.google.com/view/iknow-lab/professor"
+"Hyeongseok Son": "https://sites.google.com/site/sonhspostech/"
+"Seong Joon Oh": "https://seongjoonoh.com/"
+"Minsu Cho": "https://cvlab.postech.ac.kr/~mcho/"
+"Jungseul Ok": "https://sites.google.com/view/jungseulok"
+"Juwon Kang": "https://dblp.org/pid/214/2255.html"
