@@ -18,7 +18,7 @@
     if (button) {
       var next = choices[(choices.indexOf(preference) + 1) % choices.length];
       button.hidden = false;
-      button.textContent = "Theme: " + preference;
+      button.textContent = preference === "system" ? "Auto" : preference.charAt(0).toUpperCase() + preference.slice(1);
       button.setAttribute("aria-label", "Theme: " + preference + ". Switch to " + next + " theme");
     }
   }
