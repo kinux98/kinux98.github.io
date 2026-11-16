@@ -7,11 +7,6 @@ layout: default
     <h1 id="name">{{ site.title | escape }}</h1>
     <p class="affiliation">{{ site.data.profile.role }} · <a href="{{ site.data.profile.organization_url }}">{{ site.data.profile.organization }}</a></p>
     <div class="biography">{{ content }}</div>
-    <div class="research-themes" aria-label="Research interests">
-      <span>Data-efficient learning</span>
-      <span>Cross-modal distillation</span>
-      <span>3D perception</span>
-    </div>
     <nav class="profile-links" aria-label="Contact and profiles">
       <a href="mailto:{{ site.email }}">Email</a>
       <a href="{{ site.cv_path | relative_url }}">Curriculum vitae</a>
