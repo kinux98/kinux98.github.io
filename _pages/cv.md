@@ -1,10 +1,10 @@
 ---
-layout: Curriculum Vitae
+layout: default
+title: Curriculum vitae
 permalink: /cv/
-title: cv
-nav: false
-nav_order: 5
-cv_pdf: Awesome_CV.pdf
-toc:
-  sidebar: left
 ---
+<article class="document prose">
+  <h1>Curriculum vitae</h1>
+  <p><a href="{{ site.cv_path | relative_url }}">View Donghyeon Kwon’s CV (PDF)</a></p>
+  <p>The PDF is the maintained version of my curriculum vitae.</p>
+</article>
