@@ -1,107 +1,107 @@
 # Donghyeon Kwon — research website
 
-A small Jekyll site for biography, publications, news, and academic background.
-The interface uses one stylesheet and one optional theme script. No Bootstrap,
-jQuery, icon fonts, remote fonts, npm build, Python packages, or theme overrides.
+A small Jekyll site for biography, publications, news and academic background.
+One stylesheet and one optional browser script support light/dark themes. No
+Bootstrap, jQuery, icon fonts, remote fonts or npm build dependencies.
 
 ## Edit content
 
 | Content | Source |
 | --- | --- |
-| Biography | `_pages/about.md` |
-| Current role, experience, education, reviewing and honors | `_data/profile.yml` |
+| Biography and military service note | `_pages/about.md` |
+| Experience, education, reviewing and honors | `_data/profile.yml` |
 | Publications and paper links | `_bibliography/papers.bib` |
+| Verified author destinations | `_data/coauthors.yml` |
 | Publication figures | `assets/img/publication_preview/` |
 | News archive | `_news/` |
 | Name, contact profiles and site URL | `_config.yml` |
 | CV | `assets/pdf/Donghyeon_Kwon_CV.pdf` |
 | Layout and appearance | `_layouts/`, `assets/css/site.css` |
 
-`assets/pdf/Resume.pdf` is retained as an existing personal document, but the
-navigation points to the maintained CV. Do not replace it with a demo resume.
+`assets/pdf/Resume.pdf` is retained as an existing personal document. Navigation
+points to the maintained CV. The original portrait, publication figures and
+personal PDFs are preserved.
 
 ## Local development
 
-Use Ruby 3.3 and Bundler (the lockfile records the tested gem versions):
+Use Ruby 3.3 and Bundler:
 
 ```sh
 bundle install
 bundle exec jekyll serve
 ```
 
-Open `http://localhost:4000`. Python 3.9+ is needed only for the output checker:
+Open `http://localhost:4000`. Validate a production build with Python 3.9+ and Node:
 
 ```sh
 JEKYLL_ENV=production bundle exec jekyll build
+ruby scripts/test_link_targets.rb
 python3 scripts/check_site.py _site
+python3 scripts/check_link_policy.py _site
 node --check assets/js/theme.js
 ```
 
-Node is only used for a syntax check; the website has no Node dependencies.
-The lockfile supports Linux x86-64 and Apple Silicon. On another platform, use
-`bundle lock --add-platform YOUR_PLATFORM` and commit the resulting lockfile.
+Python uses only its standard library. Node is only used for a syntax check.
+The lockfile supports Linux x86-64 and Apple Silicon. On other platforms run
+`bundle lock --add-platform YOUR_PLATFORM` and commit the lockfile.
 
-## Build and deployment
+## Link policy and author verification
 
-A pull request builds and validates the site without publishing it. The
+`_plugins/link_targets.rb` adds `target="_blank"` and `rel="noopener noreferrer"`
+to navigation links during the Jekyll build, including Markdown, news, internal
+pages, section menus and PDFs. It leaves escaped code and script/style content
+unchanged. New-tab behavior therefore works without JavaScript. The keyboard
+**Skip to content** control stays in the current page; theme buttons and native
+BibTeX disclosure are controls, not navigation links. Email links still use the
+visitor's configured mail handler. The browser decides whether `_blank` is shown
+as a tab or a separate window.
+
+Author mappings use full display names, never surnames alone. The 14 current
+authors all have verified identity links: personal websites, academic profiles,
+a self-maintained GitHub profile, or the official lab member listing for Inho
+Kim (whose individual homepage was not unambiguously verified). Sources for
+new or changed mappings are recorded in `_data/coauthors.yml`. Unknown future
+authors should not receive guessed destinations; the output check flags them.
+
+## Design and wording
+
+The layout emphasizes research and education, with a muted blue-teal accent,
+readable publication rows and a light career timeline. It has no initials logo,
+research-keyword chips, discipline kicker or highlighted publication background.
+The Prague photo caption remains italic, and the portrait is visible on mobile.
+
+GenGenAI is mentioned as the placement for **Military service obligation**, not
+as the headline affiliation. The service note and company link have subdued
+styling. `military_service: true` in a career entry enables that contextual style.
+
+## Deployment
+
+A pull request builds and validates the site without publishing. Its
 `site-preview` artifact contains the exact tested output. Pushes to `main`
-publish that output to `gh-pages`, using the existing GitHub Pages branch source.
-Keep **Settings → Pages → Deploy from a branch → gh-pages → /(root)**.
+publish that output to `gh-pages`. Keep **Settings → Pages → Deploy from a
+branch → gh-pages → /(root)**.
 
-Builds use Ubuntu 24.04 and Ruby 3.3. Concurrency prevents older builds from
-publishing over newer ones. Deployment requires a successful build, an HTML
-structure check, local link/anchor checks, publication completeness checks,
-and JavaScript syntax validation. External websites are not checked offline.
+CI runs on Ubuntu 24.04 and Ruby 3.3, checking HTML structure, local targets,
+anchors, bibliography completeness, author links, link-target policy and
+JavaScript syntax before deployment. External URL availability is not checked
+by the offline validator. Concurrency prevents outdated builds from publishing.
 
-Before merging visual changes, inspect the generated site at desktop and mobile
-widths, light/dark themes, keyboard navigation, and with JavaScript disabled.
-BibTeX disclosure uses native HTML and works without JavaScript.
+Inspect the actual artifact at desktop/mobile widths, light/dark themes,
+keyboard navigation and JavaScript-disabled mode before merging visual changes.
 
-## Scope of the cleanup
+## Cleanup history
 
-The al-folio demo blog, sample projects, Einstein CV/sample data, demo media,
-unused layouts and Sass, JavaScript integrations, citation scraping, Docker
-publishing workflows, and theme-maintenance workflows have been removed. The
-publication bibliography, news source records, personal PDFs, portrait, and
-figures used by the publications are retained. Existing `/publications/`,
-`/news/`, individual news URLs, `/cv/`, and `/experience/exp1/` remain available.
+Unused al-folio demo posts, sample projects, Einstein data, demo media, layouts,
+Sass, integrations and Docker/theme-maintenance workflows were removed. The
+bibliography, news, personal assets and existing content routes are retained.
+Git history is not rewritten; removed template files remain recoverable. The
+original MIT license is retained.
 
-The Git history is not rewritten: removed template material can be retrieved
-from the preceding commits. The original MIT license is retained.
+## References
 
-## Design references
+- Minimal Light: https://minimal-light-theme.yliu.me/
+- Berkeley academic webpage guidance: https://townsendcenter.berkeley.edu/blog/personal-academic-webpages-how-tos-and-tips-better-site
+- W3C page structure: https://www.w3.org/WAI/tutorials/page-structure/
+- Jekyll hooks: https://jekyllrb.com/docs/plugins/hooks/
 
-The design prioritizes readable research content over portfolio decoration:
-
-- Minimal Light academic theme: https://minimal-light-theme.yliu.me/
-- Berkeley, personal academic webpage guidance: https://townsendcenter.berkeley.edu/blog/personal-academic-webpages-how-tos-and-tips-better-site
-- NN/g, aesthetic and minimalist design: https://www.nngroup.com/articles/aesthetic-minimalist-design/
-- W3C, page structure: https://www.w3.org/WAI/tutorials/page-structure/
-
-These informed the information hierarchy; no third-party theme code was copied.
-
-## Subtle visual emphasis (November 2026)
-
-A single muted blue-teal accent now supports the text-first design. The homepage
-uses a small discipline kicker, clearer paper links, and a light career
-timeline. Publication entries use a consistent background. The
-portrait caption remains *Taken in Prague, Czech Republic*; the portrait stays
-visible on mobile. The theme control works in light, dark and system modes.
-
-The accent and layout choices were informed by academic website guidance from
-Berkeley (restrained accent colors and typography) and the example research
-presentation of Minimal Light. The goal is to emphasize research content rather
-than add decorative logos, background illustrations or external dependencies.
-
-
-## Publication author links
-
-`_data/coauthors.yml` maps a person's full display name (e.g. `Suha Kwak`)
-to a verified personal homepage or academic profile. `_layouts/bib.liquid`
-uses those links in all generated publication lists, retaining bold emphasis
-for the site owner and the asterisk for equal-contribution authors.
-Unknown names remain plain text; **do not** guess at a link based on a surname.
-The redundant research-interest keyword badges were removed from the homepage.
-
-Typography was increased modestly (generally 1px) across body text, news,
-publication details and mobile views without adding external fonts.
+No third-party theme code or extra runtime dependencies were added.
