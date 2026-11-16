@@ -34,3 +34,15 @@ If the site does not update, inspect the latest **Deploy site** workflow run fir
 ## Source of truth
 
 Edit content in `main`, not `gh-pages`. The latter is generated output that can be overwritten on the next successful deployment.
+
+## Homepage visual design
+
+The homepage uses a dedicated editorial-style design layer, without replacing Jekyll or the publication system:
+
+- \`_layouts/about.liquid\` — landing page structure and semantic sections.
+- \`_includes/portfolio-nav.liquid\` — responsive navigation and theme toggle.
+- \`assets/css/portfolio.css\` — homepage-only design tokens, cards, typography, and breakpoints.
+- \`_includes/{experiences,educations,services,honors}.html\` — reusable content panels.
+- \`_bibliography/papers.bib\` — publication source of truth (unchanged).
+
+Styling is loaded **only** on the homepage via \`_includes/head.liquid\`; other Jekyll pages retain their existing template. The theme toggle remains compatible with the site's existing \`theme.js\`. No new JavaScript framework is required.

@@ -1,103 +1,128 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
-
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+<div class="post portfolio-home">
+  <section class="portfolio-hero" aria-labelledby="portfolio-hero-title">
+    <div class="portfolio-hero__copy">
+      <p class="portfolio-eyebrow">
+        <span class="portfolio-eyebrow__dot" aria-hidden="true"></span>
+        Research Portfolio <span class="portfolio-eyebrow__year">/ 2026</span>
+      </p>
+      <h1 id="portfolio-hero-title">
+        {{ site.first_name }}
+        <span>{{ site.last_name }}<span class="portfolio-accent" style="display: inline;">.</span></span>
+      </h1>
+      <p class="portfolio-role">Researcher <span class="portfolio-role__slash">/</span> Computer Vision &amp; Generative AI</p>
+      <p class="portfolio-lede">
+        Researching data-efficient learning in computer vision and developing practical generative AI systems.
+      </p>
+      <div class="portfolio-hero__buttons">
+        <a class="portfolio-button portfolio-button--primary" href="#publications">Explore research <span aria-hidden="true">↗</span></a>
+        <a class="portfolio-button portfolio-button--secondary" href="{{ '/assets/pdf/Donghyeon_Kwon_CV.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">View CV <span aria-hidden="true">↗</span></a>
       </div>
-    {% endif %}
-
-    <div class="clearfix">{{ content }}</div>
-
-    <br>
-    <br>
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-        <div class="contact-note">{{ site.contact_note }}</div>
+      <div class="portfolio-social-links" aria-label="Contact and research profiles">
+        <a href="mailto:{{ site.email }}">Email ↗</a>
+        <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
       </div>
-    {% endif %}
-
-    <br>
-    <br>
-
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2><b>News</b></h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-
-    <br>
-    <br>
-
-    <!-- Experience -->
-    {%- include experiences.html %}
-
-    <br>
-    <br>
-
-    <!-- Education -->
-    {%- include educations.html %}
-
-    <br>
-    <br>
-
-    <!-- Selected papers -->
-    <h2> <b>Publications</b> </h2>
-    <div class="publications">
-      {% bibliography %}
     </div>
+    <div class="portfolio-hero__art">
+      <span class="portfolio-photo__corner">DK / 2026</span>
+      <div class="portfolio-photo">
+        {% if page.profile.image %}
+          <img src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" alt="Portrait of {{ site.first_name }} {{ site.last_name }}" fetchpriority="high">
+        {% endif %}
+      </div>
+      <div class="portfolio-status">
+        <span>Currently</span>
+        <strong>Researcher at GenGenAI</strong>
+        <small>Seoul, South Korea</small>
+      </div>
+    </div>
+  </section>
+  <div class="portfolio-scroll">Scroll to explore <span aria-hidden="true">↓</span></div>
 
-    <br>
-    <br>
+  <section id="about" class="portfolio-section portfolio-about" aria-labelledby="portfolio-about-title">
+    <div class="portfolio-heading">
+      <div>
+        <span class="portfolio-kicker">01 / Introduction</span>
+        <h2 id="portfolio-about-title">About me<span class="portfolio-accent">.</span></h2>
+      </div>
+      <p class="portfolio-heading__aside">Exploring learning methods that connect rigorous research with practical impact.</p>
+    </div>
+    <div class="portfolio-about__grid">
+      <div class="portfolio-about__text">{{ content }}</div>
+      <aside class="portfolio-focus" aria-label="Research interests">
+        <h3 class="portfolio-focus__title">Areas of focus</h3>
+        <div class="portfolio-focus__item"><span>01</span>Data-efficient learning</div>
+        <div class="portfolio-focus__item"><span>02</span>Multi-modal knowledge distillation</div>
+        <div class="portfolio-focus__item"><span>03</span>Semi- &amp; self-supervised learning</div>
+        <div class="portfolio-focus__item"><span>04</span>Generative AI systems</div>
+      </aside>
+    </div>
+  </section>
 
-    <!-- Services -->
-    {%- include services.html %}
+  <section id="publications" class="portfolio-section" aria-labelledby="portfolio-publications-title">
+    <div class="portfolio-heading">
+      <div>
+        <span class="portfolio-kicker">02 / Research output</span>
+        <h2 id="portfolio-publications-title">Publications<span class="portfolio-accent">.</span></h2>
+      </div>
+      <p class="portfolio-heading__aside">Selected peer-reviewed work across computer vision, 3D perception, and efficient learning.</p>
+    </div>
+    <div class="publications">{% bibliography %}</div>
+  </section>
 
-    <br>
-    <br>
+  {% if page.news and site.announcements.enabled %}
+    <section id="updates" class="portfolio-section" aria-labelledby="portfolio-news-title">
+      <div class="portfolio-heading">
+        <div>
+          <span class="portfolio-kicker">03 / What’s new</span>
+          <h2 id="portfolio-news-title">Latest updates<span class="portfolio-accent">.</span></h2>
+        </div>
+        <p class="portfolio-heading__aside">Research milestones, publications, and announcements.</p>
+      </div>
+      {% include news.liquid limit=true %}
+    </section>
+  {% endif %}
 
-    <!-- Honors -->
-    {%- include honors.html %}
+  <section id="experience" class="portfolio-section" aria-labelledby="portfolio-background-title">
+    <div class="portfolio-heading">
+      <div>
+        <span class="portfolio-kicker">04 / Journey</span>
+        <h2 id="portfolio-background-title">Experience &amp; education<span class="portfolio-accent">.</span></h2>
+      </div>
+      <p class="portfolio-heading__aside">Research experience spanning academic work and industry applications.</p>
+    </div>
+    <div class="portfolio-grid">
+      {% include experiences.html %}
+      {% include educations.html %}
+    </div>
+  </section>
 
-    <br>
-    <br>
-    
-    {% if site.newsletter.enabled and site.footer_fixed %}
-      {% include scripts/newsletter.liquid center=true %}
-    {% endif %}
-  </article>
+  <section id="service" class="portfolio-section" aria-labelledby="portfolio-service-title">
+    <div class="portfolio-heading">
+      <div>
+        <span class="portfolio-kicker">05 / Community</span>
+        <h2 id="portfolio-service-title">Service &amp; recognition<span class="portfolio-accent">.</span></h2>
+      </div>
+      <p class="portfolio-heading__aside">Contributing to the research community through peer review and scholarly work.</p>
+    </div>
+    <div class="portfolio-grid">
+      {% include services.html %}
+      {% include honors.html %}
+    </div>
+  </section>
+
+  <section class="portfolio-bottom-cta" aria-label="Get in touch">
+    <div>
+      <p>Have a research question or collaboration idea?</p>
+      <h2>Let’s connect and exchange ideas.</h2>
+    </div>
+    <a class="portfolio-button" href="mailto:{{ site.email }}">Get in touch <span aria-hidden="true">↗</span></a>
+  </section>
+  {% if site.newsletter.enabled and site.footer_fixed %}
+    {% include scripts/newsletter.liquid center=true %}
+  {% endif %}
 </div>

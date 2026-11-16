@@ -1,3 +1,11 @@
+{% if page.permalink == '/' %}
+  <footer class="portfolio-footer" role="contentinfo">
+    <div class="portfolio-footer__inner">
+      <span>© {{ site.time | date: '%Y' }} Donghyeon Kwon · Research Portfolio</span>
+      <a href="#portfolio-hero-title">Back to top ↑</a>
+    </div>
+  </footer>
+{% else %}
 {% if site.footer_fixed %}
   <footer class="fixed-bottom" role="contentinfo">
     <div class="container mt-0">
@@ -32,4 +40,5 @@
       {% endif %}
     </div>
   </footer>
+{% endif %}
 {% endif %}
