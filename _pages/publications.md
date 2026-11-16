@@ -5,6 +5,11 @@ permalink: /publications/
 ---
 <div class="document">
   <h1>Publications</h1>
-  <p class="section-note">Most recent first.</p>
-  <div class="publications">{% bibliography %}</div>
+  <section aria-labelledby="paper-list-title">
+    <div class="section-heading">
+      <h2 id="paper-list-title">Research papers</h2>
+      <span class="section-note">Most recent first</span>
+    </div>
+    <div class="publications">{% bibliography %}</div>
+  </section>
 </div>
