@@ -1,48 +1,81 @@
-# Donghyeon Kwon — Personal Website
+# Donghyeon Kwon — research website
 
-Source code for [kinux98.github.io](https://kinux98.github.io/), a Jekyll-based academic and research portfolio built with the al-folio theme.
+A small Jekyll site for biography, publications, news, and academic background.
+The interface uses one stylesheet and one optional theme script. No Bootstrap,
+jQuery, icon fonts, remote fonts, npm build, Python packages, or theme overrides.
 
-## Content management
+## Edit content
 
-- **Profile / homepage:** `_pages/about.md`
-- **Publications:** `_bibliography/papers.bib`
-- **News and announcements:** `_news/`
-- **Professional experience, awards, and service:** `_includes/`
-- **Site settings and social links:** `_config.yml`
-- **Images and downloadable documents:** `assets/`
+| Content | Source |
+| --- | --- |
+| Biography | `_pages/about.md` |
+| Current role, experience, education, reviewing and honors | `_data/profile.yml` |
+| Publications and paper links | `_bibliography/papers.bib` |
+| Publication figures | `assets/img/publication_preview/` |
+| News archive | `_news/` |
+| Name, contact profiles and site URL | `_config.yml` |
+| CV | `assets/pdf/Donghyeon_Kwon_CV.pdf` |
+| Layout and appearance | `_layouts/`, `assets/css/site.css` |
+
+`assets/pdf/Resume.pdf` is retained as an existing personal document, but the
+navigation points to the maintained CV. Do not replace it with a demo resume.
 
 ## Local development
 
-Install Ruby 3.3, Bundler, Python 3, and ImageMagick. Then run:
+Use Ruby 3.3 and Bundler (the lockfile records the tested gem versions):
 
-```bash
+```sh
 bundle install
 bundle exec jekyll serve
 ```
 
-Visit `http://localhost:4000`. The CI build also installs `nbconvert` and uses PurgeCSS to reduce the generated CSS.
+Open `http://localhost:4000`. Python 3.9+ is needed only for the output checker:
 
-## Deployment
+```sh
+JEKYLL_ENV=production bundle exec jekyll build
+python3 scripts/check_site.py _site
+node --check assets/js/theme.js
+```
 
-1. Push changes to the `main` branch.
-2. The [Deploy site workflow](https://github.com/kinux98/kinux98.github.io/actions/workflows/deploy.yml) builds the site with Jekyll.
-3. On success, the workflow publishes `_site/` to the `gh-pages` branch.
-4. GitHub Pages serves the published `gh-pages` branch at [kinux98.github.io](https://kinux98.github.io/).
+Node is only used for a syntax check; the website has no Node dependencies.
+The lockfile supports Linux x86-64 and Apple Silicon. On another platform, use
+`bundle lock --add-platform YOUR_PLATFORM` and commit the resulting lockfile.
 
-If the site does not update, inspect the latest **Deploy site** workflow run first. A failed build leaves the previously published website online. In GitHub **Settings → Pages**, the publishing source should remain **Deploy from a branch → gh-pages → /(root)** for this workflow.
+## Build and deployment
 
-## Source of truth
+A pull request builds and validates the site without publishing it. The
+`site-preview` artifact contains the exact tested output. Pushes to `main`
+publish that output to `gh-pages`, using the existing GitHub Pages branch source.
+Keep **Settings → Pages → Deploy from a branch → gh-pages → /(root)**.
 
-Edit content in `main`, not `gh-pages`. The latter is generated output that can be overwritten on the next successful deployment.
+Builds use Ubuntu 24.04 and Ruby 3.3. Concurrency prevents older builds from
+publishing over newer ones. Deployment requires a successful build, an HTML
+structure check, local link/anchor checks, publication completeness checks,
+and JavaScript syntax validation. External websites are not checked offline.
 
-## Homepage visual design
+Before merging visual changes, inspect the generated site at desktop and mobile
+widths, light/dark themes, keyboard navigation, and with JavaScript disabled.
+BibTeX disclosure uses native HTML and works without JavaScript.
 
-The homepage uses a dedicated editorial-style design layer, without replacing Jekyll or the publication system:
+## Scope of the cleanup
 
-- \`_layouts/about.liquid\` — landing page structure and semantic sections.
-- \`_includes/portfolio-nav.liquid\` — responsive navigation and theme toggle.
-- \`assets/css/portfolio.css\` — homepage-only design tokens, cards, typography, and breakpoints.
-- \`_includes/{experiences,educations,services,honors}.html\` — reusable content panels.
-- \`_bibliography/papers.bib\` — publication source of truth (unchanged).
+The al-folio demo blog, sample projects, Einstein CV/sample data, demo media,
+unused layouts and Sass, JavaScript integrations, citation scraping, Docker
+publishing workflows, and theme-maintenance workflows have been removed. The
+publication bibliography, news source records, personal PDFs, portrait, and
+figures used by the publications are retained. Existing `/publications/`,
+`/news/`, individual news URLs, `/cv/`, and `/experience/exp1/` remain available.
 
-Styling is loaded **only** on the homepage via \`_includes/head.liquid\`; other Jekyll pages retain their existing template. The theme toggle remains compatible with the site's existing \`theme.js\`. No new JavaScript framework is required.
+The Git history is not rewritten: removed template material can be retrieved
+from the preceding commits. The original MIT license is retained.
+
+## Design references
+
+The design prioritizes readable research content over portfolio decoration:
+
+- Minimal Light academic theme: https://minimal-light-theme.yliu.me/
+- Berkeley, personal academic webpage guidance: https://townsendcenter.berkeley.edu/blog/personal-academic-webpages-how-tos-and-tips-better-site
+- NN/g, aesthetic and minimalist design: https://www.nngroup.com/articles/aesthetic-minimalist-design/
+- W3C, page structure: https://www.w3.org/WAI/tutorials/page-structure/
+
+These informed the information hierarchy; no third-party theme code was copied.

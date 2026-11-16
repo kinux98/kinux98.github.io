@@ -1,0 +1,77 @@
+role: Researcher
+organization: GenGenAI
+organization_url: https://gengen.ai/
+location: Seoul, South Korea
+
+experience:
+  - role: Researcher
+    organization: GenGenAI
+    url: https://gengen.ai/
+    dates: Mar 2026 – Feb 2027
+    location: Seoul, South Korea
+    detail: Research and development on generative AI systems. Military service obligation through February 28, 2027.
+  - role: Graduate Researcher
+    organization: Computer Vision Lab, POSTECH
+    url: https://cvlab.postech.ac.kr/
+    dates: Feb 2021 – Feb 2026
+    location: Pohang, South Korea
+    detail: "Advisor: Prof. Suha Kwak."
+  - role: Research Intern
+    organization: Samsung Advanced Institute of Technology
+    url: https://semiconductor.samsung.com/sait/
+    dates: Jul 2023 – Aug 2023
+    location: Suwon, South Korea
+    detail: "Data-efficient 3D object detection for autonomous driving. Mentor: Dr. Hyeongseok Son."
+  - role: Research Assistant
+    organization: Korea Institute of Science and Technology
+    url: https://eng.kist.re.kr/eng/index.do
+    dates: Jun 2019 – Aug 2019
+    location: Seoul, South Korea
+    detail: "Typo correction for virtual keyboards. Advisor: Dr. Suhyun Kim."
+
+education:
+  - degree: Ph.D. in Computer Science and Engineering
+    organization: POSTECH
+    url: https://postech.ac.kr/eng/
+    dates: 2021 – 2026
+    detail: "Advisor: Prof. Suha Kwak, Computer Vision Lab."
+  - degree: B.S. in Computer Science and Engineering
+    organization: POSTECH
+    url: https://postech.ac.kr/eng/
+    dates: 2017 – 2021
+    detail: "Advisor: Prof. Hwanjo Yu."
+
+reviewing:
+  - venue: CVPR
+    years: 2023–2026
+  - venue: ICCV
+    years: 2023, 2025
+  - venue: ECCV
+    years: 2024, 2026
+  - venue: NeurIPS
+    years: 2023, 2026
+  - venue: ICLR
+    years: 2024–2027
+  - venue: WACV
+    years: "2025"
+  - venue: AAAI
+    years: "2024"
+  - venue: ACCV
+    years: 2022, 2024, 2026
+journal_reviewing:
+  - venue: IEEE TPAMI
+    years: "2025"
+
+honors:
+  - award: Best Patent Award
+    organization: Samsung-POSTECH Research Center
+    year: 2026
+  - award: BK21 Best Paper Award
+    organization: POSTECH CSE
+    year: 2026
+  - award: Outstanding Reviewer
+    organization: ICCV
+    year: 2025
+  - award: BK21 Best Paper Award
+    organization: POSTECH CSE
+    year: 2023
