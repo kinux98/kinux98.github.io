@@ -336,12 +336,6 @@ strong { font-weight: 600; }
 .news-copy strong { color: var(--accent-strong); }
 .small-link { color: var(--accent); font-weight: 600; }
 /* Publications: the first (most recent) record gets one quiet highlight. */
-.publications ol.bibliography > li:first-child {
-  padding: 19px 18px;
-  background: var(--accent-soft);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 8px 8px 0;
-}
 .paper { gap: 29px; }
 .paper-figure {
   background: #fff;
@@ -430,7 +424,6 @@ strong { font-weight: 600; }
   .section { padding-block: 33px; }
   .section-heading h2 { font-size: 1.3rem; }
   .paper { gap: 14px; }
-  .publications ol.bibliography > li:first-child { padding: 15px 12px; }
   .paper-venue { margin-bottom: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
