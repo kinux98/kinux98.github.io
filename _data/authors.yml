@@ -1,0 +1,16 @@
+# Exact author-name keys from _bibliography/papers.bib.
+# Prefer personal sites, then a person-specific scholarly profile.
+# Authors with no verified profile URL remain plain text.
+"Donghyeon Kwon": "https://scholar.google.com/citations?user=Xy8bpc8AAAAJ"
+"Taegyu Park": "https://orcid.org/0009-0006-6387-644X"
+"Suha Kwak": "https://suhakwak.github.io/"
+"Boseung Jeong": "https://boseungjeong.github.io/"
+"Hyunsouk Cho": "https://dblp.org/pid/116/5184.html"
+"Youngseok Yoon": "https://dblp.org/pid/296/8835.html"
+"Hyeongseok Son": "https://sites.google.com/site/sonhspostech/"
+"Jaehyun Pahk": "https://dblp.org/pid/353/5747.html"
+"Seong Joon Oh": "https://seongjoonoh.com/"
+"Minsu Cho": "https://cvlab.postech.ac.kr/~mcho/"
+"Juwon Kang": "https://dblp.org/pid/214/2255.html"
+"Nayeong Kim": "https://nayeong-v-kim.github.io/"
+"Jungseul Ok": "https://sites.google.com/view/jungseulok"
