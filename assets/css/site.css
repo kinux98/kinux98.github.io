@@ -29,7 +29,7 @@
   }
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 body {
   margin: 0;
   background: var(--background);
@@ -55,7 +55,7 @@ h2 { font-size: 1.42rem; line-height: 1.35; letter-spacing: -0.02em; margin-bott
 h3 { font-size: 1.03rem; line-height: 1.5; margin-bottom: 4px; }
 strong { font-weight: 600; }
 .shell { max-width: 1040px; padding-inline: 36px; margin-inline: auto; }
-.skip-link { position: absolute; left: 20px; top: -70px; padding: 8px 14px; background: var(--background); z-index: 10; }
+.skip-link { position: absolute; left: 20px; top: -70px; padding: 8px 14px; background: var(--background); z-index: 30; }
 .skip-link:focus { top: 8px; }
 .site-header { border-bottom: 1px solid var(--line); }
 .header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
@@ -64,9 +64,7 @@ strong { font-weight: 600; }
 .site-nav a, #theme-toggle { font-size: 14px; text-decoration: none; color: var(--muted); }
 #theme-toggle { border: 0; border-left: 1px solid var(--line); padding: 0 0 0 18px; background: transparent; cursor: pointer; }
 .intro { display: grid; grid-template-columns: minmax(0, 1fr) 160px; gap: 60px; padding: 68px 0 44px; align-items: start; }
-.intro h1 { margin-bottom: 10px; }
-.affiliation { color: var(--muted); margin-bottom: 26px; font-size: 16px; }
-.affiliation a { color: inherit; text-decoration: none; }
+.intro h1 { margin-bottom: 24px; }
 .biography p { margin-bottom: 15px; }
 .biography p:last-child { margin-bottom: 0; }
 .biography a { text-decoration: none; }
@@ -143,7 +141,6 @@ strong { font-weight: 600; }
   #theme-toggle { padding-left: 12px; }
   .intro { display: flex; flex-direction: column; gap: 22px; padding-block: 34px; }
   .portrait { display: none; }
-  .affiliation { margin-bottom: 22px; }
   .section { padding-block: 32px; }
   .section-heading { gap: 12px; margin-bottom: 22px; }
   .news-list li { grid-template-columns: 69px minmax(0, 1fr); gap: 12px; }
@@ -166,14 +163,12 @@ strong { font-weight: 600; }
   --accent-strong: #1e5361;
   --accent-soft: #eaf3f1;
   --accent-border: #cbdedc;
-  --accent-warm: #bc7b59;
 }
 :root[data-theme="dark"] {
   --accent: #99ced7;
   --accent-strong: #b4dde3;
   --accent-soft: #243b41;
   --accent-border: #40606a;
-  --accent-warm: #d4a07e;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -181,7 +176,6 @@ strong { font-weight: 600; }
     --accent-strong: #b4dde3;
     --accent-soft: #243b41;
     --accent-border: #40606a;
-    --accent-warm: #d4a07e;
   }
 }
 /* Navigation: highlight the CV without turning the header into a toolbar. */
@@ -222,37 +216,13 @@ strong { font-weight: 600; }
   padding-top: 69px;
   padding-bottom: 52px;
 }
-.intro-kicker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 11px;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.intro-kicker::before {
-  content: "";
-  display: block;
-  flex: 0 0 7px;
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
-  background: var(--accent-warm);
-}
-.intro-kicker span { opacity: 0.45; }
 .intro h1 {
   font-size: clamp(2.72rem, 4.5vw, 3.3rem);
   font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 1.17;
-  margin-bottom: 10px;
+  margin-bottom: 24px;
 }
-.affiliation { margin-bottom: 27px; font-size: 15.5px; }
-.affiliation a { color: var(--accent-strong); font-weight: 650; }
 .biography { max-width: 700px; }
 .biography p { line-height: 1.8; }
 .biography p:first-child {
@@ -331,7 +301,6 @@ strong { font-weight: 600; }
   letter-spacing: -0.012em;
 }
 .paper-authors { margin-bottom: 7px; }
-
 .paper-authors a {
   color: inherit;
   text-decoration: underline;
@@ -400,6 +369,7 @@ strong { font-weight: 600; }
 .service-list dt { font-weight: 650; color: var(--accent-strong); }
 .honors-list li:first-child h3 { color: var(--accent-strong); }
 @media (max-width: 760px) {
+  html { scroll-padding-top: 130px; }
   .intro {
     grid-template-columns: minmax(0, 1fr) 143px;
     gap: 30px;
@@ -409,10 +379,8 @@ strong { font-weight: 600; }
   .section { padding-block: 39px; }
 }
 @media (max-width: 540px) {
-  html { scroll-padding-top: 112px; }
   .intro { padding-top: 30px; gap: 20px; }
   .intro h1 { font-size: clamp(2.25rem, 10vw, 2.75rem); }
-  .intro-kicker { font-size: 10px; margin-bottom: 8px; }
   .portrait { display: block; width: 142px; margin: 4px 0 0; }
   .portrait img { width: 142px; height: 142px; }
   .portrait figcaption { font-size: 11px; white-space: nowrap; }
@@ -423,6 +391,27 @@ strong { font-weight: 600; }
 }
 @media (prefers-reduced-motion: reduce) {
   .site-nav a, .paper-links a { transition: none; }
+}
+
+/* Service placement is secondary context, not the research headline. */
+.biography .service-note {
+  color: var(--muted);
+  font-size: 15.5px;
+  font-weight: 400;
+  margin-top: 22px;
+}
+.biography .service-note a,
+.service-placement .record-org a {
+  color: var(--muted);
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+.biography .service-note a:hover,
+.service-placement .record-org a:hover {
+  color: var(--text);
+  text-decoration-color: currentColor;
 }
 
 @media print {

@@ -9,7 +9,8 @@ experience:
     url: https://gengen.ai/
     dates: Mar 2026 – Feb 2027
     location: Seoul, South Korea
-    detail: Research and development on generative AI systems. Military service obligation through February 28, 2027.
+    military_service: true
+    detail: Military service obligation through February 28, 2027. Research and development on generative AI systems.
   - role: Graduate Researcher
     organization: Computer Vision Lab, POSTECH
     url: https://cvlab.postech.ac.kr/

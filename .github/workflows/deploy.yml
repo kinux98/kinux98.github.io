@@ -33,7 +33,9 @@ jobs:
         run: bundle exec jekyll build --trace
       - name: Validate HTML, publications and local links
         run: |
+          ruby scripts/test_link_targets.rb
           python3 scripts/check_site.py _site
+          python3 scripts/check_link_policy.py _site
           node --check assets/js/theme.js
       - name: Report source inventory
         env:

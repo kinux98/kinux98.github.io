@@ -1,13 +1,22 @@
-# Person-specific destinations, verified against personal/institutional pages.
-# Key on the full name to avoid accidental links between different researchers.
-# Names without a verified personal or author-specific profile render as plain text.
+# Verified destinations, reviewed 2026-11-16. Key on full names, not surnames.
 "Donghyeon Kwon": "https://scholar.google.com/citations?user=Xy8bpc8AAAAJ"
 "Suha Kwak": "https://suhakwak.github.io/"
-"Boseung Jeong": "https://scholar.google.com/citations?user=CiQLGVMAAAAJ"
+# Personal homepage linked from https://suhakwak.github.io/team.html
+"Boseung Jeong": "https://boseungjeong.github.io/"
 "Youngseok Yoon": "https://scholar.google.com/citations?user=AFPIkj0AAAAJ"
 "Hyunsouk Cho": "https://sites.google.com/view/iknow-lab/professor"
 "Hyeongseok Son": "https://sites.google.com/site/sonhspostech/"
 "Seong Joon Oh": "https://seongjoonoh.com/"
 "Minsu Cho": "https://cvlab.postech.ac.kr/~mcho/"
 "Jungseul Ok": "https://sites.google.com/view/jungseulok"
-"Juwon Kang": "https://dblp.org/pid/214/2255.html"
+# Both destinations linked from the coauthored ICML project page:
+# https://cvlab.postech.ac.kr/research/TTAwithProxy/
+"Juwon Kang": "https://scholar.google.com/citations?user=nwN9X2UAAAAJ"
+"Nayeong Kim": "https://nayeong-v-kim.github.io/"
+# OpenReview confirms POSTECH, advisor Suha Kwak and the coauthored DeFT paper.
+"Jaehyun Pahk": "https://openreview.net/profile?id=~Jaehyun_Pahk1"
+# Self-maintained profile identifies POSTECH Computer Vision Lab.
+"Taegyu Park": "https://github.com/DelVel"
+# No unambiguously verified personal profile: use the official lab listing.
+# Text-fragment support varies; the member listing remains valid without it.
+"Inho Kim": "https://cvlab.postech.ac.kr/page/members#:~:text=Inho%20Kim"
