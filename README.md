@@ -79,3 +79,17 @@ The design prioritizes readable research content over portfolio decoration:
 - W3C, page structure: https://www.w3.org/WAI/tutorials/page-structure/
 
 These informed the information hierarchy; no third-party theme code was copied.
+
+## Subtle visual emphasis (November 2026)
+
+A single muted blue-teal accent now supports the text-first design. The homepage
+uses a small discipline kicker, research-interest labels, a subtle highlight for
+the most recent paper, clearer paper links, and a light career timeline. The
+portrait caption remains *Taken in Prague, Czech Republic*; the portrait stays
+visible on mobile. The theme control works in light, dark and system modes.
+
+The accent and layout choices were informed by academic website guidance from
+Berkeley (restrained accent colors and typography) and the example research
+presentation of Minimal Light. The goal is to emphasize research content rather
+than add decorative logos, background illustrations or external dependencies.
+
